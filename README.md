@@ -1,6 +1,6 @@
 # tls-cert-renewer
 
-This application is used to auto renew kubernetes ingress tls certificate.
+This application is used to auto renew kubernetes ingress tls certificate from s3 bucket.
 
 ### Note:
 Secrets must contain the following metadata labels
@@ -25,7 +25,7 @@ $ echo -n "secretkey" | base64
 | --- | --- | ---
 | `--bucket_name` | `Required` | Bucket Name
 | `--prefix` | `Required` | Folder name where the certificate is located
-| `--sleep_time` | `86400` | Time for the next execution
+| `--sleep_time` | `86400` | Time for until the next execution
 
 
 6) Finally:
