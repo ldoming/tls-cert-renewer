@@ -1,0 +1,29 @@
+kind: ServiceAccount
+apiVersion: v1
+metadata:
+  name: tls-cert-renewer
+  namespace: kube-system
+---
+kind: ClusterRole
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: tls-cert-renewer-secrets-modifier-clusterrole
+  namespace: kube-system
+rules:
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+---
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  namespace: kube-system
+  name: tls-cert-renewer-secrets-modifier-clusterrolebinding
+subjects:
+  - kind: ServiceAccount
+    name: tls-cert-renewer
+    namespace: kube-system
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: tls-cert-renewer-secrets-modifier-clusterrole
