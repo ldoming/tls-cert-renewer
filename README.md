@@ -14,7 +14,7 @@ metadata:
 ## Setting up in your environment:
 1) Create a new IAM User with an S3 download policy
 2) Replace the ACCESS_KEY_ID environment variable in `kubernetes/deployment.yaml` with your new generated user's access key id
-3) Replace the `awsKey:` variable in `deployment/secret.yaml` with the base64 contents of your generated user's secret access key
+3) Replace the `awsKey:` variable in `kubernetes/secret.yaml` with the base64 contents of your generated user's secret access key
 ```bash
 $ echo -n "secretkey" | base64
 ```
@@ -25,7 +25,7 @@ $ echo -n "secretkey" | base64
 | --- | --- | ---
 | `--bucket_name` | `Required` | Bucket Name
 | `--prefix` | `Required` | Folder name where the certificate is located
-| `--sleep_time` | `86400` | Time for until the next execution
+| `--sleep_time` | `86400` | Time until the next execution
 
 
 6) Finally:
