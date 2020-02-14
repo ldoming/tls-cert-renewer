@@ -22,7 +22,7 @@ $ echo -n "secretkey" | base64
 5) Edit the `kubernetes/deployment.yaml` `command:` with following arguments
 
 | Symbol | Default | Description
-| --- | --- | 
+| --- | --- | ---
 | `--bucket_name` | `Required` | Bucket Name
 | `--prefix` | `Required` | Folder name where the certificate is located
 | `--sleep_time` | `86400` | Time for the next execution
