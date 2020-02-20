@@ -2,6 +2,10 @@
 
 This application is used to auto renew kubernetes ingress tls certificate from s3 bucket.
 
+## How it works
+
+![How it works](https://github.com/ldoming/tls-cert-renewer/blob/master/img/how-it-works.png)
+
 ### Note:
 Secrets must contain the following metadata labels
 ```yaml
